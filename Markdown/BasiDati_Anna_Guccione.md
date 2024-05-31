@@ -5,13 +5,12 @@
 ### Progetto di Basi di Dati
 
 IN0501184
+
 **Anna Guccione**
+
 Maggio 2024
 
-### Sommario
-
-[TOC]
-# 1. Presentazione del progetto
+# 1. Presentazione del progetto <a name="1"></a>
 
 ## 1.1. Introduzione
 
@@ -36,8 +35,6 @@ Ogni **cliente** del bar è un animale, identificato da un nome, da una specie, 
 Il menù del bar comprende una varietà di **bevande**, ognuna caratterizzata da un tipo, da un prezzo e da una difficoltà. La bevanda è composta da un certo numero di **ingredienti** che possono essere presenti in percentuali variabili e che sono caratterizzati da un nome e da una categoria.
 
 Il livello dell'utente aumenta in base al **punteggio**. Aumentare di livello determina l'accesso ad acquisti nello shop di nuovi arredi per il bar, ognuno caratterizzato da un tipo, uno stile, un prezzo e dal livello di accesso.
-
-***
 
 
 ## 1.2. Glossario dei termini
@@ -120,6 +117,7 @@ Il livello dell'utente aumenta in base al **punteggio**. Aumentare di livello de
             </tr>
         </tbody>
     </table>
+
 # 2. Schema concettuale
 
 ## 2.1. Diagramma Entity-Relationship
@@ -183,6 +181,7 @@ Il livello dell'utente aumenta in base al **punteggio**. Aumentare di livello de
     </tr>
   </tbody>
 </table>
+
 ### Relationship
 
 <table style="page-break-inside: auto;">
@@ -245,6 +244,7 @@ Il livello dell'utente aumenta in base al **punteggio**. Aumentare di livello de
     </tr>
   </tbody>
 </table>
+
 ## 2.3. Vincoli non espirimibili graficamente
 
 - Il rapporto di amicizia tra due account dev'essere simmetrico.
@@ -252,6 +252,7 @@ Il livello dell'utente aumenta in base al **punteggio**. Aumentare di livello de
 - Il livello del giocatore viene aumentato al raggiungimento di un certo punteggio.
 - Il bar può essere decorato da al massimo un arredo per tipo.
 - Il portafoglio dell'utente non può avere un bilancio negativo.
+
 
 # 3. Progettazione logica
 
@@ -422,12 +423,11 @@ Il livello dell'utente aumenta in base al **punteggio**. Aumentare di livello de
 - **Partizionamento orizzontale di relazione**
 
   Si nota che nella relazione *Decorazione* la *Data acquisto* potrebbe essere nulla. Si sceglie quindi di separare la relazione in due *Acquisto* e *Decorazione*, una che rappresenta l'acquisto, l'altra la decorazione del bar. Questo anche in previsione del fatto che queste operazioni avvengono separatamente.
-  
-  ***
 
 ## 3.4. Diagramma Entity-Relationship ristrutturato
 
 ![](./diagrammaER2.png)
+
 
 # 4. Schema logico
 
@@ -435,31 +435,31 @@ Il livello dell'utente aumenta in base al **punteggio**. Aumentare di livello de
 
 Si individuano le seguenti relazioni, identificatori e attributi per lo schema logico con il modello relazionale:
 
-- **Account** $$\rightarrow$$ (<u>Nickname</u>, Password, Livello)
-- **Amicizie** $$\rightarrow$$ (<u>*Nickname*</u>, <u>*Nickname*</u>)
-- **Utenti** $$\rightarrow$$ (<u>*Nickname*</u>, Nome, Avatar, Portafoglio, Punteggio )
-- **Acquisti** $$\rightarrow$$ (<u>*Nickname*</u>, <u>*Tipo arredo*</u>, <u>*Stile*</u>, Data)
-- **Decorazioni** $$\rightarrow$$ (<u>*Nickname*</u>, <u>*Tipo*</u>, <u>*Stile*</u>)
-- **Arredi** $$\rightarrow$$ (<u>Tipo</u>, <u>Stile</u>, Prezzo, Livello)
-- **Partite** $$\rightarrow$$ (<u>Numero</u>, <u>*Nickname*</u>, Durata, Guadagno)
-- **Ordini** $$\rightarrow$$ (<u>Numero</u>, <u>*Numero partita*</u>, *Tipo bevanda*, *Difficoltà bevanda*, *Nome animale*, Stelle, Ricavo)
-- **Bevande** $$ \rightarrow$$ (<u>Tipo</u>, <u>Difficoltà</u>, Prezzo)
-- **Composizione** $$\rightarrow$$ (<u>*Tipo bevanda*</u>, <u>*Difficoltà bevanda*</u>, <u>*Nome ingrediente*</u>, Percentuale)
-- **Ingredienti** $$\rightarrow$$ (<u>Nome</u>, Categoria)
-- **Animali** $$\rightarrow$$ (<u>Nome</u>, Specie, *Tipo personalità*)
-- **Personalità** $$\rightarrow$$ (<u>Tipo</u>, Dialogo, Mancia)
+- **Account** ⭢ (<u>Nickname</u>, Password, Livello)
+- **Amicizie** ⭢ (<u>*Nickname*</u>, <u>*Nickname*</u>)
+- **Utenti** ⭢ (<u>*Nickname*</u>, Nome, Avatar, Portafoglio, Punteggio )
+- **Acquisti** ⭢ (<u>*Nickname*</u>, <u>*Tipo arredo*</u>, <u>*Stile*</u>, Data)
+- **Decorazioni** ⭢ (<u>*Nickname*</u>, <u>*Tipo*</u>, <u>*Stile*</u>)
+- **Arredi** ⭢ (<u>Tipo</u>, <u>Stile</u>, Prezzo, Livello)
+- **Partite** ⭢ (<u>Numero</u>, <u>*Nickname*</u>, Durata, Guadagno)
+- **Ordini** ⭢ (<u>Numero</u>, <u>*Numero partita*</u>, *Tipo bevanda*, *Difficoltà bevanda*, *Nome animale*, Stelle, Ricavo)
+- **Bevande** ⭢ (<u>Tipo</u>, <u>Difficoltà</u>, Prezzo)
+- **Composizione** ⭢ (<u>*Tipo bevanda*</u>, <u>*Difficoltà bevanda*</u>, <u>*Nome ingrediente*</u>, Percentuale)
+- **Ingredienti** ⭢ (<u>Nome</u>, Categoria)
+- **Animali** ⭢ (<u>Nome</u>, Specie, *Tipo personalità*)
+- **Personalità** ⭢ (<u>Tipo</u>, Dialogo, Mancia)
 
 ## 4.2. Schema logico
 
 ![diagramma logico](./diagrammaL.png)
 
-***
 
 ## 4.3. Normalizzazione
 
 1. Si osserva che il database è già in prima forma normale, in quanto tutte le colonne sono atomiche.
 2. Si osserva che il database è già in seconda forma normale, in quanto ciascuna colonna dipende interamente dalla primary key.
 3. Si osserva che nella tabella Ordini non è rispettata la terza forma normale, perché la colonna Ricavo è un campo calcolato che risulta dipendere dalla Bevanda e dalle Stelle: infatti il prezzo viene calcolato a partire dal prezzo base della bevanda a cui viene aggiunta la mancia in base a quante stelle si guadagna. La soluzione potrebbe consistere nel creare una tabella separata che tenga conto di tutte le possibili mance e quindi di tutti i possibili prezzi per ogni bevanda, il che risulta una complicazione eccessiva per il database che non porta vantaggi. Si decide quindi di matenere il campo calcolato per semplificare la logica e le operazioni.
+
 
 # 5. Codice SQL
 
@@ -567,7 +567,6 @@ BEGIN
     RETURN p;
 END;
 ```
-***
 
 #### Operazione 4: gestione delle decorazioni
 
@@ -618,8 +617,6 @@ BEGIN
 END $$
 ```
 
-***
-
 #### Operazione 8: aggiornamento del livello (per il trigger)
 
 Stored procedure per modificare il livello di un utente e funzione che determina per quali punti effettuare il passaggio di livello.
@@ -651,7 +648,6 @@ BEGIN
     RETURN lvl;
 END;
 ```
-***
 
 ## 5.2. Trigger
 
