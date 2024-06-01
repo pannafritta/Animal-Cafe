@@ -150,7 +150,7 @@ public class Window extends JFrame {
         gameFrame.add(btnPanel, BorderLayout.SOUTH);
         gameFrame.setVisible(true);
 
-        Timer pourTimer = new Timer(100, e -> cup.pour());
+        Timer pourTimer = new Timer(70, e -> cup.pour());
 
         btnPour.addActionListener(e -> {
             if (btnPour.isSelected()) {
