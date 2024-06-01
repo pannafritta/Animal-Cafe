@@ -206,9 +206,9 @@ DELIMITER ;
 -- Operazione 4: Gestione delle decorazioni
 
 DELIMITER $$
-CREATE PROCEDURE decorateBar(IN nick varchar(100), IN type varchar(100), IN style varchar(100))
+CREATE PROCEDURE decorateBar(IN nick varchar(100), IN type varchar(100), IN style varchar(50))
 BEGIN
-    DECLARE control varchar(100);
+    DECLARE control varchar(50);
     SELECT style INTO control FROM shopped
         WHERE nickname = nick AND furnitureType = type AND furnitureStyle = style;
     IF control IS NULL THEN
