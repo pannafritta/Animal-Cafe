@@ -14,7 +14,7 @@ Maggio 2024
 
 ## 1.1. Introduzione
 
-Si intende realizzare un database destinato a supportare "Animal Café", un'ipotetica applicazione mobile di gioco di tipo simulazione, in cui gli utenti sono proprietari di un bar frequentato da animali antropomorfi, ispirati al famoso gioco "Animal Crossing". 
+Si intende realizzare un database destinato a supportare "Animal Café", un'ipotetica applicazione mobile di gioco di tipo simulazione in cui gli utenti sono proprietari di un bar frequentato da animali antropomorfi, ispirati al famoso gioco "Animal Crossing". 
 
 ### Contesto
 
@@ -53,19 +53,19 @@ Il livello dell'utente aumenta in base al **punteggio**. Aumentare di livello de
                 <td>Utente</td>
                 <td>Account della persona che si iscrive nel gioco</td>
                 <td>Giocatore</td>
-                <td>Partita, Bar, Portafoglio</td>
+                <td>Partita, Punteggio, Portafoglio</td>
             </tr>
             <tr>
                 <td>Bar</td>
                 <td>Luogo in cui è ambientata la partita</td>
                 <td></td>
-                <td>Utente, Arredo</td>
+                <td>Partita, Arredo</td>
             </tr>
             <tr>
                 <td>Punteggio</td>
                 <td>Esperienza dell'utente ottenuta dalle partite</td>
                 <td></td>
-                <td>Utente, Partita</td>
+                <td>Utente, Partita, Stelle</td>
             </tr>
             <tr>
                 <td>Portafoglio</td>
@@ -77,13 +77,13 @@ Il livello dell'utente aumenta in base al **punteggio**. Aumentare di livello de
                 <td>Partita</td>
                 <td>Giornata di gioco nel bar</td>
                 <td></td>
-                <td>Utente, Ordini</td>
+                <td>Utente, Bar, Ordine, Punteggio</td>
             </tr>
             <tr>
                 <td>Animale</td>
                 <td>Cliente che ordina una bevanda al bar</td>
-                <td>Clienti</td>
-                <td>Bevande, Ordini</td>
+                <td>Cliente</td>
+                <td>Bevande, Ordine</td>
             </tr>
             <tr>
                 <td>Ingrediente</td>
@@ -92,13 +92,13 @@ Il livello dell'utente aumenta in base al **punteggio**. Aumentare di livello de
                 <td>Bevande</td>
             </tr>
             <tr>
-                <td>Bevande</td>
-                <td>Prodotti descritti nel menù</td>
-                <td>Prodotti</td>
-                <td>Animale, Ingredienti, Ordini</td>
+                <td>Bevanda</td>
+                <td>Prodotta descritti nel menù</td>
+                <td>Prodotto</td>
+                <td>Animale, Ingredienti, Ordine</td>
             </tr>
             <tr>
-                <td>Ordini</td>
+                <td>Ordine</td>
                 <td>Ordinazione della bevanda effettuata dal cliente</td>
                 <td></td>
                 <td>Partita, Animale, Bevande, Stelle</td>
@@ -106,8 +106,8 @@ Il livello dell'utente aumenta in base al **punteggio**. Aumentare di livello de
               <tr>
                 <td>Stelle</td>
                 <td>Punteggio dell'utente su ogni ordine</td>
-                <td>Punteggio</td>
-                <td>Punteggio, Ordini</td>
+                <td>Punti</td>
+                <td>Punteggio, Ordine</td>
             </tr>
             <tr>
                 <td>Arredo</td>
